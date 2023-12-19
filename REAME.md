@@ -26,7 +26,7 @@ This dataset presents many challenges due to its business nature.
 
 - The datasets is highly imbalanced as less tha 1% of the transactions are fraudulent.
 
-- Data Shift. The behavioural patterns change over time. The patterns observed in a period (e.g. year) may not translate in future periods. Moreover, we need to consider that there is a business process to validate transactions. Therefore, there is a window of time between the latest transaction received and the . For more details please, read (Fraud Detection Handbook. Chapter 5.2)[https://fraud-detection-handbook.github.io/fraud-detection-handbook/Chapter_5_ModelValidationAndSelection/ValidationStrategies.html]
+- Data Shift. The behavioural patterns change over time. The patterns observed in a period (e.g. year) may not translate in future periods. Moreover, we need to consider that there is a business process to validate transactions. Therefore, there is a window of time between the latest transaction received and the . For more details please, read [Fraud Detection Handbook. Chapter 5.2](https://fraud-detection-handbook.github.io/fraud-detection-handbook/Chapter_5_ModelValidationAndSelection/ValidationStrategies.html)
 
 <img src="https://fraud-detection-handbook.github.io/fraud-detection-handbook/_images/stream_valid.png" width="2500" height="250"/>
 
@@ -44,10 +44,13 @@ This dataset presents many challenges due to its business nature.
 
 1. Catboost was the best performing model, although performance was very similar between Gradient Bosting Decision Trees model (XGBoots, LightGBM).
 
-[IMAGE]
+![Model competition](https://github.com/JPonsa/card_fraud_detection/blob/main/figures/model_selection_balanced.png)
 
-2. Importance of Hyperparameter tunning. Much better performance in for the minor class. I
-In crease of Recall from 0.6 to 0.7. 
+2. Importance of Hyperparameter tunning. Much better performance in for the minor class by using hyperparameter tunning increasing recall of the minor class from 0.6 to almost 0.7 without a major impact on other metrics. It is true that False Positive rate has increased slightly but as discussed below this is acceptable
+
+![Confusion Matrix](https://github.com/JPonsa/card_fraud_detection/blob/main/figures/optimised.catBoost.cm.png)
+
+![Metrics](https://github.com/JPonsa/card_fraud_detection/blob/main/figures/optimised.catBoost.png)
 
 ### Why Recall?
 I decided that recall was the most interesting metric from a business perspective. Assuming that predicted fraudulent detections would be further reviewed by an SME. We want to reduce as much as possible False Negative (undetected fraudulent transaction), while False Positive (legit transactions flagged as fraudulent) are less critical.

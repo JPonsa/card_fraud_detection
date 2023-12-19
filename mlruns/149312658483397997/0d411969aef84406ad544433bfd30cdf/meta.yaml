@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/joanp/Projects/card_fraud_detection/mlruns/149312658483397997/0d411969aef84406ad544433bfd30cdf/artifacts
+end_time: 1702240167159
+entry_point_name: ''
+experiment_id: '149312658483397997'
+lifecycle_stage: active
+run_id: 0d411969aef84406ad544433bfd30cdf
+run_name: catBoostClassifier validation
+run_uuid: 0d411969aef84406ad544433bfd30cdf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1702240160948
+status: 3
+tags: []
+user_id: joanp

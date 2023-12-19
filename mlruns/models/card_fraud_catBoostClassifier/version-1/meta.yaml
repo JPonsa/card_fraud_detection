@@ -1,0 +1,13 @@
+aliases: []
+creation_timestamp: 1702240167153
+current_stage: None
+description: null
+last_updated_timestamp: 1702240167153
+name: card_fraud_catBoostClassifier
+run_id: 0d411969aef84406ad544433bfd30cdf
+run_link: null
+source: file:///C:/Users/joanp/Projects/card_fraud_detection/mlruns/149312658483397997/0d411969aef84406ad544433bfd30cdf/artifacts/models
+status: READY
+status_message: null
+user_id: null
+version: 1

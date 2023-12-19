@@ -1,0 +1,16 @@
+digest: 55b76313
+name: dataset
+profile: '{"num_rows": 67240, "num_elements": 1143080}'
+schema: '{"mlflow_colspec": [{"type": "long", "name": "Unnamed: 0"}, {"type": "double",
+  "name": "TX_AMOUNT"}, {"type": "boolean", "name": "IS_WKD"}, {"type": "boolean",
+  "name": "IS_NIGHT"}, {"type": "long", "name": "CUSTOMER_TX_COUNT_1_DAY"}, {"type":
+  "long", "name": "CUSTOMER_TX_COUNT_7_DAY"}, {"type": "long", "name": "CUSTOMER_TX_COUNT_30_DAY"},
+  {"type": "double", "name": "CUSTOMER_TX_AVG_1_DAY"}, {"type": "double", "name":
+  "CUSTOMER_TX_AVG_7_DAY"}, {"type": "double", "name": "CUSTOMER_TX_AVG_30_DAY"},
+  {"type": "long", "name": "TERMINAL_TX_COUNT_1_DAY"}, {"type": "long", "name": "TERMINAL_TX_COUNT_7_DAY"},
+  {"type": "long", "name": "TERMINAL_TX_COUNT_30_DAY"}, {"type": "double", "name":
+  "TERMINAL_FRAUD_RISK_1_DAY"}, {"type": "double", "name": "TERMINAL_FRAUD_RISK_7_DAY"},
+  {"type": "double", "name": "TERMINAL_FRAUD_RISK_30_DAY"}, {"type": "long", "name":
+  "TX_FRAUD"}]}'
+source: '{"url": "https://github.com/Fraud-Detection-Handbook/simulated-data-raw/"}'
+source_type: http

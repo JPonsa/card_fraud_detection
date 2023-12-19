@@ -1,0 +1,1 @@
+[('preprocessor', StandardScaler()), ('oversampling', SMOTE(sampling_strategy=0.3)), ('undersampling', RandomUnderSampler(sampling_strategy=1)), ('classifier', <catboost.core.CatBoostClassifier object at 0x0000029160D010D0>)]

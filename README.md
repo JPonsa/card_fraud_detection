@@ -1,3 +1,6 @@
+<img src="
+https://media.istockphoto.com/id/1307675090/photo/fraud-alert-concept-with-security-lock-on-fake-credit-cards.jpg?s=612x612&w=0&k=20&c=R2djChH2SEFXNRFOo3K7z_Jd4aZl8Yl5Tn64oFVuhh4=" width="350" height="150"/>
+
 
 # Summary
 
@@ -46,11 +49,17 @@ This dataset presents many challenges due to its business nature.
 
 ![Model competition](https://github.com/JPonsa/card_fraud_detection/blob/main/figures/model_selection_balanced.png)
 
+<p align="center">
+<img src="https://github.com/JPonsa/card_fraud_detection/blob/main/figures/pipeline.png" width="150" height="150"/>
+
+</p>
+
 2. Importance of Hyperparameter tunning. Much better performance in for the minor class by using hyperparameter tunning increasing recall of the minor class from 0.6 to almost 0.7 without a major impact on other metrics. It is true that False Positive rate has increased slightly but as discussed below this is acceptable
 
 ![Confusion Matrix](https://github.com/JPonsa/card_fraud_detection/blob/main/figures/optimised.catBoost.cm.png)
 
 ![Metrics](https://github.com/JPonsa/card_fraud_detection/blob/main/figures/optimised.catBoost.png)
+
 
 ### Why Recall?
 I decided that recall was the most interesting metric from a business perspective. Assuming that predicted fraudulent detections would be further reviewed by an SME. We want to reduce as much as possible False Negative (undetected fraudulent transaction), while False Positive (legit transactions flagged as fraudulent) are less critical.

@@ -9,7 +9,7 @@ A secondary goal of this project is to familiarize me with the with the latest t
 
 - Perform data transformation and feature engineering using **PySpark**. <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/White_check_mark_in_dark_green_rounded_square.svg" width="15" height="15"/>
 
-- Produce a binary classification model with a minor class (fraud) recall over 80% <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/White_check_mark_in_dark_green_rounded_square.svg" width="15" height="15"/>
+- Produce a binary classification model with a minor class (fraud) recall over 60% and a total f1 score over 80% <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/White_check_mark_in_dark_green_rounded_square.svg" width="15" height="15"/>
 
 - Use **MLFlow** to manage the life cycle of an ML model from parameters logging to model registry <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/White_check_mark_in_dark_green_rounded_square.svg" width="15" height="15"/>
 
@@ -31,7 +31,6 @@ This dataset presents many challenges due to its business nature.
 <img src="https://fraud-detection-handbook.github.io/fraud-detection-handbook/_images/stream_valid.png" width="2500" height="250"/>
 
 
-
 # Methodology
 
 - Over / Under sampling. As less than 1% of the transactions are fraudulent I used imblearn to oversample (with SMOTE) the minority class and randomly undersample the majority class; so the training dataset is balanced. 
@@ -39,7 +38,7 @@ This dataset presents many challenges due to its business nature.
 - Feature engineering.
     - Time features. Based on the transaction timestamp we can determined if the transaction was conducted on weekends or night.
     - User profiles. For each customer I computed the total number and the average number of transaction in the last 1, 7 or 30 days before the new transaction. This inform use on whether in some customer habits. We use rolling windows as customer behaviours may change over time
-    - Payment terminal Fraud risk. Similar to customers, I computed the total and average number of transaction conducted on a given terminal. Additionally 
+    - Payment terminal Fraud risk. Similar to customers, I computed the total and average number of transaction conducted on a given terminal. Additionally I computed the number of previous fraudulent transaction in different time windows. The logic is that once a terminal has been compromised, it is more likely to generate more fraudulent transactions transactions.
 
 # Observations
 
@@ -48,11 +47,14 @@ This dataset presents many challenges due to its business nature.
 [IMAGE]
 
 2. Importance of Hyperparameter tunning. Much better performance in for the minor class. I
-In crease of Recall from 0.6 to 0.7 and 
+In crease of Recall from 0.6 to 0.7. 
+
+### Why Recall?
+I decided that recall was the most interesting metric from a business perspective. Assuming that predicted fraudulent detections would be further reviewed by an SME. We want to reduce as much as possible False Negative (undetected fraudulent transaction), while False Positive (legit transactions flagged as fraudulent) are less critical.
 
 # Future work
 
-- Explore if Deep Neural Networks provide a better peformance.
+- Explore if Deep Neural Networks provide a better performance.
 - Review the Data split strategy.
 - Test how to deploy a registered model using MLFlow and use it. MLFlow was generated on the necessary artifacts (model.pkl, env.yaml)
 
